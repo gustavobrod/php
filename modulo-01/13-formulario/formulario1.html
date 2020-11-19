@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="Cadastro.php" method="POST">
+        
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            Data: <br>
+            <input type="date" name="data" min="2015-01-01" max="2022-12-31"> </p>
+            Hora: <br>
+            <input type="time" name="hora"> </p>
+            Mês e Ano: <br>
+            <input type="month" name="mês-ano"> </p>
+            Semana: <br>
+            <input type="week" name="semana"> </p>
+            Data e Hora: <br>
+            <input type="datetime-local" name="data-e-hora"> </p> <br>
+
+            Nome: <br>
+            <!--required = campo obrigatório-->
+            <!--autofocus = campo em fogo-->
+            <!--desabled = campo não selecionavel-->
+            <!--maxlength = limita os caracteres-->
+            <input type="text" name="nome" required autofocus> <br>
+            Senha: <br> 
+            <input type="password" name="senha" required> <br>
+            E-mail: <br> 
+            <input type="e-mail" name="e-mail" required autocomplete="on" placeholder="Seu endereço de e-mail"> </p>
+
+            Escolha seu curso: <br>
+            <input type="curso" name="Curso" list="lista-cursos">
+            <datalist id="lista-cursos">
+                <option value="HTML5"></option>
+                <option value="CSS3"></option>
+                <option value="PHP"></option>
+            </datalist>
+            
+            <p>Imagem: <br>
+            <input type="file" name="imagem"> </p>
+
+            <input type="hidden" name="id"> </p>
+
+            URL: <br>
+            <input type="url" name="site"> </p>
+
+            Search: <br>
+            <input type="search" name="pesquisa"> </p>
+
+            Telefone: <br>
+            <input type="tel" name="telefone"> </p>
+
+            Time: <br> 
+            <!--radio = escolher uma de varias opções-->
+            <input type="radio" name="time" value="Grêmio" checked>Grêmio <br>
+            <input type="radio" name="time" value="Internacional">Internacional <br>
+            <input type="radio" name="time" value="Passo Fundo">Passo Fundo </p>
+
+            Cores: <br> 
+            <!--checkbox = escolher mais de uma opção-->
+            <input type="checkbox" name="cores" value="Azul" checked>Azul <br>
+            <input type="checkbox" name="cores" value="Vermelho">Vermelho <br>
+            <input type="checkbox" name="cores" value="branco">Branco </p>
+
+            Quantidade: <br> 
+            <input type="number" name="quantidade" min="0" max="500"> <br>
+            <input type="range" name="quantidade">
+
+            Cor: <br>
+            <input type="color" name="cor"> </p>
+
+            Mensagem: <br>
+            <textarea name="mensagem" id="" cols="30" rows="5" spellcheck="true"></textarea> </p>
+            <button type="button">Clique Aqui</button></p>
+            
+            Escolha seu veículo <br>
+            <select name="veículo">
+                <optgroup label="Carros">
+                    <option value="camaro">Camaro</option>
+                    <option value="logan">Logan</option>
+                    <option value="hondafit">Honda Fit</option>
+                </optgroup>
+
+                <optgroup label="Motos">
+                    <option value="crossher" selected>Crossher</option>
+                    <option value="tornado">Tornado</option>
+                </optgroup>
+            </select>
+
+            <!--Botão enviar-->
+            <p><input type="submit" name="btn-enviar" value="Enviar"> </p>
+        </fieldset>
+
+    </form>
+</body>
+</html>

@@ -1,10 +1,5 @@
 <?php
 
-namespace Alura\Banco\Modelo\Conta;
-
-use Alura\BAnco\Modelo\Conta\Titular;
-
-
 class Conta
 {
     private $titular;
@@ -51,8 +46,8 @@ class Conta
             return;
         }
 
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
+        $this->saca($valorATransferir);
+        $contaDestino->deposita($valorATransferir);
     }
 
     public function recuperaSaldo(): float
@@ -65,7 +60,7 @@ class Conta
         return $this->titular->recuperaNome();
     }
 
-    public function recuperaCpfTitular(): string
+    public function recuperaCpfTitular(): CPF
     {
         return $this->titular->recuperaCpf();
     }

@@ -12,7 +12,7 @@ class Titular
         $this->validaNomeTitular($nome);
         $this->nome = $nome;        
         $this->endereco = $endereco;        
-    }
+    }    
 
     public function recuperaCpf(): string
     {

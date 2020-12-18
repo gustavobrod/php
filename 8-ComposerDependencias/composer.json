@@ -1,0 +1,14 @@
+{
+    "name": "gustavobrod/buscador-cursos",
+    "description": "Buscador de cursos alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "gustavobrod",
+            "email": "gustavo.brod@outlook.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    }
+}

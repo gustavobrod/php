@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'b32338052dbaf28857232755bb294c604ba8ba9f',
+    'reference' => 'db06646a73f2b740f052fc87b4881de612cce025',
     'name' => 'gustavobrod/buscador-cursos',
   ),
   'versions' => 
@@ -54,7 +54,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'b32338052dbaf28857232755bb294c604ba8ba9f',
+      'reference' => 'db06646a73f2b740f052fc87b4881de612cce025',
     ),
     'guzzlehttp/guzzle' => 
     array (

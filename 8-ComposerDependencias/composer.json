@@ -24,8 +24,19 @@
         "phan/phan": "^4.0"
     },
     "scripts": {
-        "test": "phpunit tests\\TestBuscadorDeCursos",
+        "test": "phpunit tests//TestBuscadorDeCursos.php",
         "cs": "phpcs --standard=PSR12 src/",
-        "phan": "phan --allow-polyfill-parser"
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@phan",
+            "@cs",
+            "@test"
+        ],
+        "post-update-cmd": [
+            "@test"
+        ]
+    },
+    "scripts-descriptions": {
+    "check": "Rodas as verificações do código. PHAN, PHPCS, PHPUNIT"
     }
 }

@@ -7,7 +7,7 @@ require_once 'vendor/autoload.php';
 $databasePath = __DIR__ . '/banco.sqlite';
 $pdo = new PDO('sqlite: . $databasePath');
 
-$statement = $pdo->query('SELECT * FROM students WHERE id = 1;');
+$statement = $pdo->query('SELECT * FROM students;');
 
 $studentDataList = $statement->fetchall(PDO::FETCH_ASSOC);
 $studentList = [];

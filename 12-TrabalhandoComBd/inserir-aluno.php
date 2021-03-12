@@ -7,10 +7,20 @@ require_once 'vendor/autoload.php';
 $databasePath = __DIR__ . '/banco.sqlite';
 $pdo = new PDO('sqlite: . $databasePath');
 
-$student = new Student(null, 'Gustavo Brod', new \DateTimeImmutable('1981-05-25'));
+$student = new Student(
+    null, 
+    "Gustavo', ''); DROP TABLE students; --Brod", 
+    new \DateTimeImmutable('1981-05-25')
+);
 
-$sqlInsert = "INSERT INTO students (name, birth_date) VALUES ('{$student->name()}', '{$student->birthDate()->format('Y-m-d')}')";
+$sqlInsert = "INSERT INTO students (name, birth_date) VALUES (?, ?);";
+$statement = $pdo->prepare($sqlInsert);
+$statement->bindValue(1, $student->name());
+$statement->bindValue(2, $student->birthDate()->format('Y-m-d'));
 
-var_dump ($pdo->exec($sqlInsert)) . PHP_EOL;
+if ($statement->execute()) {
+    echo "Aluno incluído";
+}
 
- 
+
+//var_dump ($pdo->exec($sqlInsert)) . PHP_EOL;

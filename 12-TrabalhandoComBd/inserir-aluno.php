@@ -9,11 +9,11 @@ $pdo = new PDO('sqlite:' . $databasePath);
 
 $student = new Student(
     null,
-    "Gustavo', ''); DROP TABLE students; -- Lima Brod",
-    new DateTimeImmutable('1981-05-25')
+    "Ana Julia",
+    new DateTimeImmutable('2008-04-12')
 );
 
-$sqlInsert = "INSERT INTO students(name, birth_date) VALUES (?, ?)";
+$sqlInsert = "INSERT INTO students(name, birth_date) VALUES (:name, :birth_date)";
 $statement = $pdo->prepare($sqlInsert);
 $statement->bindValue(1, $student->name());
 $statement->bindValue(2, $student->birthDate()->format('Y-m-d'));

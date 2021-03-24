@@ -1,9 +1,8 @@
 <?php
 
-use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
-
-$pdo = ConnectionCreator::creatorConnection();
+$caminhoBanco = __DIR__ . '/banco.sqlite';
+$pdo = new PDO('sqlite:' . $caminhoBanco);
 
 echo 'Conectei' . PHP_EOL;
 
-$pdo->exec('CREATE TABLE students(id INTEGER PRIMARY KEY, name TEXT, birth_date TEXT);');
+$pdo->exec('CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT, birth_date TEXT);');

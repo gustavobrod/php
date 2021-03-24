@@ -4,20 +4,20 @@ use Alura\Pdo\Domain\Model\Student;
 
 require_once 'vendor/autoload.php';
 
-$pdo = \Alura\Pdo\Infrastructure\Persistence\ConnectionCreator::createConnection();
+$databasePath = __DIR__ . '/banco.sqlite';
+$pdo = new PDO('sqlite:' . $databasePath);
 
 $student = new Student(
     null,
-    "Patricia Freitas",
-    new \DateTimeImmutable('1986-10-25')
+    "Gustavo', ''); DROP TABLE students; -- Lima Brod",
+    new DateTimeImmutable('1981-05-25')
 );
-$name = $student->name();
 
-$sqlInsert = "INSERT INTO students (name, birth_date) VALUES (:name, :birth_date);";
+$sqlInsert = "INSERT INTO students(name, birth_date) VALUES (?, ?)";
 $statement = $pdo->prepare($sqlInsert);
-$statement->bindParam(':name', $student->name());
-$statement->bindValue(':birth_date', $student->birthDate()->format('Y-m-d'));
+$statement->bindValue(1, $student->name());
+$statement->bindValue(2, $student->birthDate()->format('Y-m-d'));
 
 if ($statement->execute()) {
-    echo "Aluno incluído";
-}
+    echo "Aluno incluído." . PHP_EOL;
+};

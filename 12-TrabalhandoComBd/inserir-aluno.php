@@ -19,5 +19,5 @@ $statement->bindParam(':name', $student->name());
 $statement->bindValue(':birth_date', $student->birthDate()->format('Y-m-d'));
 
 if ($statement->execute()) {
-    echo "Aluno incluído";
+    echo "Aluno incluído" . PHP_EOL;
 }

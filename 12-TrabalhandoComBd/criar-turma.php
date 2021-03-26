@@ -1,5 +1,6 @@
 <?php
 
+use RuntimeException;
 use Alura\Pdo\Domain\Model\Student;
 use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
 use Alura\Pdo\Infrastructure\Repository\PdoStudentRepository;
@@ -10,20 +11,25 @@ $connection = ConnectionCreator::createConnection();
 $studentRepository = new PdoStudentRepository($connection);
 
 $connection->beginTransaction();
-$aStudent = new Student(
-    null,
-    'Adriana Souza',
-    new DateTimeImmutable('1999-01-31')
-);
 
-$studentRepository->save($aStudent);
+try {
+    $aStudent = new Student(
+        null,
+        'Adriana Souza',
+        new DateTimeImmutable('1999-01-31')
+    );
 
-$anotherStudent = new Student(
-    null,
-    'João Antonio',
-    new DateTimeImmutable('2000-12-21')
-);
+    $studentRepository->save($aStudent);
 
-$studentRepository->save($anotherStudent);
+    $anotherStudent = new Student(
+        null,
+        'João Antonio',
+        new DateTimeImmutable('2000-12-21')
+    );
 
-$connection->rollBack();
+    $studentRepository->save($anotherStudent);
+    $connection->commit();
+} catch (RuntimeException $e) {
+        echo $e->getMessage();
+        $connection->rollBack();
+}

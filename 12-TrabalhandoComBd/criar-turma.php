@@ -1,6 +1,5 @@
 <?php
 
-use RuntimeException;
 use Alura\Pdo\Domain\Model\Student;
 use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
 use Alura\Pdo\Infrastructure\Repository\PdoStudentRepository;
@@ -29,7 +28,7 @@ try {
 
     $studentRepository->save($anotherStudent);
     $connection->commit();
-} catch (RuntimeException $e) {
+} catch (PDOException $e) {
         echo $e->getMessage();
         $connection->rollBack();
 }

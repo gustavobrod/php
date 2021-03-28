@@ -18,7 +18,7 @@ class Aluno
      */
     private $nome;
 
-    public function getId(): int
+    public function getid(): int
     {
         return $this->id;
     }

@@ -14,11 +14,11 @@ class Aluno
      */
     private $id;
     /**
-     * #Column(type="string")
+     * @Column(type="string")
      */
     private $nome;
 
-    public function getid(): int
+    public function getId(): int
     {
         return $this->id;
     }

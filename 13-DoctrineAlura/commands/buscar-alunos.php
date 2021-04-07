@@ -16,3 +16,12 @@ $alunoList = $alunoRepository->findAll();
 foreach ($alunoList as $aluno) {
     echo "ID: {$aluno->getId()}\nNome: {$aluno->getNome()}\n\n";
 }
+
+$gustavo = $alunoRepository->find(2);
+echo $gustavo->getNome() . "\n\n";
+
+$allineRisso = $alunoRepository->findBy([
+    'nome' => 'Alline Risso'
+]);
+
+var_dump($allineRisso);

@@ -51,6 +51,7 @@ class ComposerStaticInit4ee09113616ab5bb7c7ee9d757b4b2a0
             'Doctrine\\Migrations\\' => 20,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
+            'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Collections\\' => 28,
@@ -153,6 +154,10 @@ class ComposerStaticInit4ee09113616ab5bb7c7ee9d757b4b2a0
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
         ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
         'Doctrine\\DBAL\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
@@ -175,9 +180,9 @@ class ComposerStaticInit4ee09113616ab5bb7c7ee9d757b4b2a0
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
-            1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-            2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
+            1 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
+            2 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
         ),
         'Alura\\Doctrine\\' => 
         array (

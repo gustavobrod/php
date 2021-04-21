@@ -2,8 +2,8 @@
 
 use Alura\Doctrine\Entity\Aluno;
 use Alura\Doctrine\Entity\Telefone;
-use Doctrine\DBAL\Logging\DebugStack;
 use Alura\Doctrine\Helper\EntityManagerFactory;
+use Doctrine\DBAL\Logging\DebugStack;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

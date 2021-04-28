@@ -18,6 +18,7 @@ class ListarCursos implements InterfaceControladorRequiscao
     public function processaRequisicao(): void
     {
         $cursos = $this->repositorioDeCursos->findAll();
+        $titulo = 'Lista de cursos';
         require __DIR__ . '/../../view/cursos/listar-cursos.php';
     }
 }

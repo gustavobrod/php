@@ -52,6 +52,5 @@ echo "A resposta é $resM" . "<br/>";
 $resN = 81 ** (1/2);
 echo "A resposta é $resN" . "<br/>";
   
-
 $resO = 27 ** (1/3); //raiz cubica
 echo "A resposta é $resO" . "<br/>";

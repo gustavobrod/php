@@ -11,14 +11,18 @@
     <main>
         <h1>Conversor de moedas - v1.0</h1>
         <?php 
-            $valor = $_GET["numero"] ?? "Sem número";
+            // Valor de conversão fixa
             $taxa = 5.22;
-            $valorConvertido = $valor * $taxa;
-            $valorCorrigido = number_format($valorConvertido, 2, ',', '.');
 
+            // Valor disponível para conversão
+            $valor = $_GET["numero"] ?? "Sem número";
+            
+            // Valor convertido
+            $valorConvertido = $valor / $taxa;
 
-            echo "Seus R$$valor equivalen a <strong>US$$valorCorrigido</strong>" . "</p>";
-            echo "<strong>Cotação fixa de R$5,22</strong> informada diretamente no código";
+            // Mostrar resultado na tela
+            echo "Seus R$$valor equivalen a " . "<strong>" . number_format($valorConvertido, 2, ',', '.') . "</strong>" . "</p>";
+            echo "<strong>Cotação fixa de R$5,22</strong> informada diretamente no código" . "</p>";
             
         ?>
     <button onClick="history.go(-1)">Voltar</button>

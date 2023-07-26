@@ -15,11 +15,18 @@
         <h1>Resultado Final</h1>
         <?php 
             $numero = $_GET["numero"] ?? "Sem número";
+            $a = $numero -1;
+            $s = $numero + 1;
             echo "<p>O seu número é <strong> $numero </strong>" . "<br/>";
-            echo "<p>O seu número antecessor é " . $numero - 1 . "<br/>";
-            echo "<p>O seu número sucesso é " . $numero + 1;
+            echo "<p>O seu número antecessor é $a" . "<br/>";
+            echo "<p>O seu número sucesso é  $s";
         ?>
-        <p><a href="javascript:history.go(-1)">Voltar</a></p>
+        <p>
+        <button onclick="javascript:window.location.href='index.html'">&#x2B05; Voltar</button>
+        <!--
+        <button onclick="javascript:history.go(-1)">&#x2b05; Voltar</button> 
+        -->
+        </p>
     </main>
 
 </body>

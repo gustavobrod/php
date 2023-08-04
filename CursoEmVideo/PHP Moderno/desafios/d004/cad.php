@@ -30,11 +30,16 @@
             $valorConvertido = $valor / $cotacao;
 
             // Mostrar resultado na tela
-            echo "Seus R\$$valor equivalen a " . "<strong>US\$" . number_format($valorConvertido, 2, ',', '.') . "</strong>" . "</p>";
-            echo "Cotação automática informada diretamente no site do " . '<a href="https://www.bcb.gov.br/" target="_blank">Banco Central</a>' . "</p>";
-            
-            echo "Cotação atual é " . number_format($cotacao, 2, ',', '.');
-        ?>
+             //echo "Seus R\$" . number_format($valor,2, ",", ".") . "equivalen a " . "<strong>" . number_format($valorConvertido, 2, ',', '.') . "</strong>" . "</p>";
+             
+            // Formatação de moedas com internacionalização! 
+            // Biblioteca intl (Internalizaton)
+            $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+
+            echo "Seus " . numfmt_format_currency($padrao, $valor, "BRL") . " equivalen a " . "<strong>" . numfmt_format_currency($padrao, $valorConvertido, "USD") . "</strong>" . "</p>";
+
+            echo "<strong>Cotação fixa de R$5,22</strong> informada diretamente no código" . "</p>";
+            ?>
     <button onclick="javascript:window.location.href='index.html'">Voltar</button>
     </main>
 

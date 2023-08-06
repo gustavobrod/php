@@ -8,16 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <main>
         <h1>Analisador de Número Real</h1>
-    </header>
-    <section>
-        <form action="cad.php" method="get">
+        <form action="numero.php" method="post">
             <label for="valor">Digite o Número Real:</label>
-            <input type="text" name="valor" id="idvalor">
+            <input type="number" name="valor" id="idvalor" step="0.001">
             <input type="submit" value="Analisar">
         </form>
-        </section>
-
+    </main>
 </body>
 </html

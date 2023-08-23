@@ -45,9 +45,7 @@
         <ul>
             <li>A <strong>Média Artimética Simples</strong> entre os valores é igual a <?=number_format($ma, 2, ",", ".")?></li>
             <li>A <strong>Média Artimética Ponderada</strong> com pesos <?=$p1?> e <?=$p2?> é igual a <?=number_format($mp, 2, ",", ".")?>.</li>
-        </ul>
-        
-        
+        </ul>              
     </section>
 
 </body>
